@@ -26,13 +26,6 @@ module.exports = (env, argv) => {
       filename: 'bundle.min.js',
     },
 
-    // define the resolvers (by alias)
-    resolve: {
-      alias: {
-        ejs: 'ejs/ejs.min.js',
-      },
-    },
-
     // define the different modules
     module: {
       rules: [
@@ -40,14 +33,6 @@ module.exports = (env, argv) => {
           test: /\.js?$/,
           exclude: /node_modules/,
           use: ['babel-loader', 'eslint-loader'],
-        },
-        {
-          test: /\.ejs$/,
-          use: [
-            {
-              loader: 'ejs-webpack-loader',
-            },
-          ],
         },
         {
           test: /\.(sa|sc|c)ss$/,
@@ -86,7 +71,7 @@ module.exports = (env, argv) => {
     // define the plugins
     plugins: [
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'src/views/pages/index.ejs'),
+        template: path.resolve(__dirname, 'src/views/pages/index.html'),
       }),
       new MiniCssExtractPlugin({
         filename: dev ? '[name].css' : '[name].[hash].css',

@@ -1,4 +1,7 @@
-# 1920-mobdev1-code-template
+# The Movie DB app with HTML
+
+This app shows movies which you can like or dislike.
+More info about [the MovieDB Api](https://developers.themoviedb.org/3)
 
 ## Included
 * SASS (and SCSS)
