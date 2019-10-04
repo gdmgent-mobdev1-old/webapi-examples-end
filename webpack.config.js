@@ -18,12 +18,19 @@ module.exports = (env, argv) => {
     mode: argv.mode,
 
     // your main js file
-    entry: ['@babel/polyfill', path.resolve(__dirname, 'src/scripts/app.js')],
+    entry: ['@babel/polyfill', path.resolve(__dirname, 'src/app.js')],
 
     // define the output
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'bundle.min.js',
+    },
+
+    // define the resolvers (by alias)
+    resolve: {
+      alias: {
+        ejs: 'ejs/ejs.min.js',
+      },
     },
 
     // define the different modules
@@ -33,6 +40,14 @@ module.exports = (env, argv) => {
           test: /\.js?$/,
           exclude: /node_modules/,
           use: ['babel-loader', 'eslint-loader'],
+        },
+        {
+          test: /\.ejs$/,
+          use: [
+            {
+              loader: 'ejs-webpack-loader',
+            },
+          ],
         },
         {
           test: /\.(sa|sc|c)ss$/,
@@ -71,7 +86,7 @@ module.exports = (env, argv) => {
     // define the plugins
     plugins: [
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'src/index.html'),
+        template: path.resolve(__dirname, 'src/views/pages/index.ejs'),
       }),
       new MiniCssExtractPlugin({
         filename: dev ? '[name].css' : '[name].[hash].css',
@@ -86,7 +101,7 @@ module.exports = (env, argv) => {
 
     // define our development server
     devServer: {
-      port: process.env.PORT || 8080,
+      port: process.env.PORT || 8081,
       contentBase: './src',
       historyApiFallback: false,
     },
