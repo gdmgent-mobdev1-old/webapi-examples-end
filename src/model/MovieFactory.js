@@ -1,6 +1,5 @@
 /**
- * The Movie Database Api & Storage helper
- * See online documentation: https://www.themoviedb.org/documentation/api
+ * The Movie Factory, to create Movie objects
  */
 
 import Movie from './Movie';
