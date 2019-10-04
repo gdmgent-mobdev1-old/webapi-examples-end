@@ -1,10 +1,13 @@
 /**
- * The Movie Database Api helper
- * See online documentation: https://www.themoviedb.org/documentation/api
+ * The MoviesList Component
  */
 
-export default class MoviesList {
+import MovieComponent from './MovieComponent';
+import Component from './Component';
+
+export default class MoviesList extends Component {
   constructor(movies) {
+    super();
     this.movies = movies;
   }
 
@@ -15,7 +18,7 @@ export default class MoviesList {
 
     // loop over movies and add to our movies list container
     this.movies.forEach((movie) => {
-      moviesListContainer.appendChild(movie.render());
+      moviesListContainer.appendChild(new MovieComponent(movie).render());
     });
 
     // return the movies list

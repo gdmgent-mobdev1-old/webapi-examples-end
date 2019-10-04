@@ -1,6 +1,6 @@
 import './styles/main.css';
 import MovieFactory from './model/MovieFactory';
-import MoviesList from './model/MoviesList';
+import MoviesList from './components/MoviesList';
 
 const App = async () => {
   // get the app container

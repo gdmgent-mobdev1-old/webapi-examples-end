@@ -18,6 +18,10 @@ body {
     position: relative;
 }
 
+/**
+ * Components
+ */
+
 #moviesList {
     display: grid;
     padding: 1rem;
