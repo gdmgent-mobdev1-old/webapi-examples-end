@@ -2,21 +2,30 @@
  * The Movie Item
  */
 
+import Movie from '../model/Movie';
 import MovieStorage from '../model/MovieStorage';
 import Component from './Component';
 
 export default class MovieComponent extends Component {
   constructor(movie) {
+    // call the super
     super();
+
+    // validate if the incoming variable is an instance of a Movie
+    if (!(movie instanceof Movie)) throw new Error('Incoming movie is not an instance of a Movie');
+
+    // set the movie in our class
     this.movie = movie;
   }
 
+  // NOTE: we have binded a Movie object on this one
+  // this represents the movie object given via the constructor
   toggleLike(e) {
     // prevent default behaviour
     e.preventDefault();
 
-    // set the new state
-    this.like = !this.like;
+    // toggle the like state
+    this.toggleLike();
 
     // get the movie container
     const movieContainer = document.getElementById(this.id);

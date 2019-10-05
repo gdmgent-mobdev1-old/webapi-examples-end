@@ -12,4 +12,8 @@ export default class Movie {
     this.posterUrl = posterUrl;
     this.like = like;
   }
+
+  toggleLike() {
+    this.like = !this.like;
+  }
 }
