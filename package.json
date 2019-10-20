@@ -1,5 +1,5 @@
 {
-  "name": "moviedb-with-html",
+  "name": "webapi-examples",
   "version": "1.0.0",
   "private": true,
   "description": "Code Template Mobile Development I",
@@ -48,6 +48,8 @@
     "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
-    "ejs": "^2.7.1"
+    "ejs": "^2.7.1",
+    "mapbox-gl": "^1.4.1",
+    "string": "^3.3.3"
   }
 }

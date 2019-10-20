@@ -14,9 +14,53 @@
         <meta property="og:description" content="We educate future talents in Design for Print and Non-Print, Web- and App Development, Audio and Video Production, 2D- 3D Animations, Printing and Packaging and the whole Management of those Workflows.">
         <meta property="og:url" content="http://www.gdm.gent/">
         <meta property="og:site_name" content="Mobile Development I">
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
     </head>
     <body>
         <div id="app">
+            <div id="apiWrapper">
+                <div id="mainTitle">
+                    <h1></h1>
+                </div>
+                <div id="notificationExample" class="apiContainer">
+                    <div class="apiTitle">
+                        <h2>Notifications</h2>
+                    </div>
+                    <div class="apiContent">
+                        <button id="showNotification" class="myButton">Show Notification</button>
+                    </div>
+                </div>
+                <div id="geolocationExample" class="apiContainer">
+                    <div class="apiTitle">
+                        <h2>Geolocation</h2>
+                    </div>
+                    <div class="apiContent">
+                        <div id="latitude" class="largeFont">No latitude yet.</div>
+                        <div id="longitude" class="largeFont">No longitude yet.</div>
+                    </div>
+                </div>
+                <div id="dragdropExample" class="apiContainer">
+                    <div class="apiTitle">
+                        <h2>Drag and Drop</h2>
+                    </div>
+                    <div class="apiContent">
+                        <div class="dragDropContent">
+                            <div class="dragDropZone">
+                                <div id="dragDropBlock" class="dragDropBlock" draggable="true"></div>
+                            </div>
+                            <div class="dragDropZone"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="mapboxExample" class="apiContainer">
+                    <div class="apiTitle">
+                        <h2>Mapbox API</h2>
+                    </div>
+                    <div class="apiContent">
+                        <div id="mapbox"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
